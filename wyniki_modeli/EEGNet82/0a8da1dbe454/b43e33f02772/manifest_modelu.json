@@ -1,0 +1,61 @@
+{
+  "experiment_id": "b43e33f02772",
+  "model": "EEGNet82",
+  "dataset_id": "0a8da1dbe454",
+  "data_manifest_relative_path": "../../../../dane_eegmmidb/zestawy/0a8da1dbe454/manifest.json",
+  "config": {
+    "model": "EEGNet82",
+    "dataset_id": "0a8da1dbe454",
+    "architecture": {
+      "F1": 8,
+      "D": 2,
+      "F2": 16,
+      "temporal_kernel": 64,
+      "separable_kernel": 16,
+      "dropout": 0.5,
+      "pool1": 4,
+      "pool2": 8,
+      "max_norm_spatial": 1.0,
+      "max_norm_dense": 0.25
+    },
+    "optimizer": "Adam",
+    "loss": "CrossEntropyLoss",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "batch_size": 64,
+    "max_epochs": 80,
+    "patience": 12,
+    "min_delta": 0.0001,
+    "normalization": "training-only per-channel z-score in microvolts",
+    "microvolt_scale": 1000000.0,
+    "normalization_eps_uv": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "refit_on_all_non_test": true,
+    "tune_threshold": false,
+    "default_threshold": 0.5,
+    "min_validation_recall": 0.2,
+    "min_validation_positives": 3,
+    "max_folds": null,
+    "full_loso": true,
+    "positive_label": 2,
+    "save_models": true,
+    "versions": {
+      "python": "3.12.12",
+      "torch": "2.9.0+cu128",
+      "numpy": "2.2.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.0"
+    }
+  },
+  "n_folds_expected": 109,
+  "full_loso": true,
+  "model_format": "pytorch_state_dict_weights_only",
+  "model_file_pattern": "modele/S{subject:03d}.pt",
+  "results": {
+    "per_subject": "wyniki_per_subject.csv",
+    "predictions": "predykcje_epok.csv",
+    "assignments": "podzialy_uczestnikow.csv",
+    "history": "historia_uczenia.csv"
+  }
+}

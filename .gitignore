@@ -1,0 +1,11 @@
+# Dane EEG - pomijamy cache i zestawy
+/dane_eegmmidb/cache/
+/dane_eegmmidb/zestawy/
+
+# Modele zapisane w eksperymentach
+/wyniki_modeli/**/0a8da1dbe454/**/modele/
+/wyniki_modeli/**/cache_psd/
+
+# Pliki tymczasowe
+.ipynb_checkpoints/
+__pycache__/
