@@ -1,0 +1,118 @@
+{
+  "experiment_id": "c024e8463ecb",
+  "model": "EEG_PSD_DUAL_BRANCH",
+  "dataset_id": "0a8da1dbe454",
+  "data_manifest_relative_path": "../../../../dane_eegmmidb/zestawy/0a8da1dbe454/manifest.json",
+  "config": {
+    "model": "EEG_PSD_DUAL_BRANCH",
+    "dataset_id": "0a8da1dbe454",
+    "architecture": {
+      "raw_conv": [
+        8,
+        1,
+        64
+      ],
+      "raw_depth_multiplier": 2,
+      "raw_sepconv": [
+        16,
+        1,
+        16
+      ],
+      "raw_pool": [
+        4,
+        8
+      ],
+      "psd_conv": [
+        8,
+        1,
+        5
+      ],
+      "psd_sepconv": [
+        16,
+        1,
+        7
+      ],
+      "psd_pool": [
+        2,
+        2
+      ],
+      "dense": 64,
+      "dropout": 0.5,
+      "initializer": "keras_glorot_uniform",
+      "flatten_order": "NHWC",
+      "bn_eps": 0.001,
+      "bn_momentum_torch": 0.01
+    },
+    "psd": {
+      "dataset_id": "0a8da1dbe454",
+      "sfreq": 128.0,
+      "fmin": 8.0,
+      "fmax": 30.0,
+      "n_fft": 256,
+      "n_per_seg": 256,
+      "n_overlap": 128,
+      "window": "hann",
+      "average": "mean",
+      "log_eps": 1e-12
+    },
+    "training": {
+      "max_epochs": 300,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "early_stopping": false,
+      "restore_best_weights": false,
+      "epoch_selection": "last",
+      "optimizer": "Adam",
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_eps": 1e-07,
+      "class_weight_reduction": "per_sample_before_mean",
+      "loss": "binary_focal",
+      "gamma": 2.0,
+      "alpha": 0.75,
+      "class_weights": true,
+      "augment_train": true,
+      "augmentation_fraction": 0.5,
+      "augmentation_label": 2,
+      "augmentation_mode": "fixed_per_fold",
+      "augmentation_noise_scale": "per_epoch_channel_std",
+      "augmentation_noise_relative": 0.05,
+      "augmentation_shift_samples": 20,
+      "augmentation_amplitude": [
+        0.9,
+        1.1
+      ],
+      "refit_on_all_non_test": false
+    },
+    "threshold": {
+      "tune_on_validation": false,
+      "default": 0.5,
+      "min_val_recall": 0.2
+    },
+    "seed": 42,
+    "max_folds": null,
+    "full_loso": true,
+    "gpu_required": true,
+    "positive_label": 2,
+    "versions": {
+      "python": "3.12.12",
+      "torch": "2.9.0+cu128",
+      "numpy": "2.2.6",
+      "sklearn": "1.9.1",
+      "mne": "1.13.2"
+    }
+  },
+  "n_folds_expected": 109,
+  "full_loso": true,
+  "model_format": "pytorch_state_dict_plus_joblib_scalers",
+  "model_file_pattern": null,
+  "pytorch_model_file_pattern": "modele/S{subject:03d}.pt",
+  "results": {
+    "per_subject": "wyniki_per_subject.csv",
+    "predictions": "predykcje_epok.csv",
+    "assignments": "podzialy_uczestnikow.csv",
+    "history": "historia_uczenia.csv"
+  }
+}

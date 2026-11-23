@@ -1,0 +1,48 @@
+{
+  "experiment_id": "b29a02c973c7",
+  "model": "RIEMANN_TS_LR",
+  "dataset_id": "0a8da1dbe454",
+  "data_manifest_relative_path": "../../../../dane_eegmmidb/zestawy/0a8da1dbe454/manifest.json",
+  "config": {
+    "model": "RIEMANN_TS_LR",
+    "dataset_id": "0a8da1dbe454",
+    "covariance_estimator": "oas",
+    "tangent_space_metric": "riemann",
+    "tangent_space_tsupdate": false,
+    "n_channels": 64,
+    "n_tangent_features": 2080,
+    "scaler": "StandardScaler",
+    "classifier": "LogisticRegression",
+    "LR_C": 1.0,
+    "LR_penalty": "l2",
+    "LR_solver": "lbfgs",
+    "LR_max_iter": 2000,
+    "LR_class_weight": null,
+    "seed": 42,
+    "tune_threshold": false,
+    "default_threshold": 0.5,
+    "min_validation_recall": 0.2,
+    "min_validation_positives": 3,
+    "refit_on_all_non_test": true,
+    "max_folds": null,
+    "positive_label": 2,
+    "save_models": true,
+    "versions": {
+      "python": "3.12.12",
+      "numpy": "2.2.6",
+      "scipy": "1.18.0",
+      "sklearn": "1.9.1",
+      "pyriemann": "0.12"
+    }
+  },
+  "n_folds_expected": 109,
+  "n_folds_planned": 109,
+  "status": "complete",
+  "model_file_pattern": "modele/S{subject:03d}.joblib",
+  "results": {
+    "per_subject": "wyniki_per_subject.csv",
+    "predictions": "predykcje_epok.csv",
+    "assignments": "podzialy_uczestnikow.csv"
+  },
+  "n_folds_completed": 109
+}

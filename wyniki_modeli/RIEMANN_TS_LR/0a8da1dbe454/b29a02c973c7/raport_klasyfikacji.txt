@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+   lewa dłoń       0.61      0.62      0.61      4950
+  prawa dłoń       0.61      0.60      0.60      4894
+
+    accuracy                           0.61      9844
+   macro avg       0.61      0.61      0.61      9844
+weighted avg       0.61      0.61      0.61      9844

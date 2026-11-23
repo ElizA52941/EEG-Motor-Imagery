@@ -1,0 +1,72 @@
+{
+  "experiment_id": "9ef2022ff767",
+  "model": "FBCSP_LDA",
+  "dataset_id": "0a8da1dbe454",
+  "data_manifest_relative_path": "../../../../dane_eegmmidb/zestawy/0a8da1dbe454/manifest.json",
+  "config": {
+    "model": "FBCSP_LDA",
+    "dataset_id": "0a8da1dbe454",
+    "bands_hz": [
+      [
+        8,
+        12
+      ],
+      [
+        12,
+        16
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        28,
+        30
+      ]
+    ],
+    "filter_type": "cheby2_sos",
+    "filter_order": 4,
+    "filter_stop_attenuation_db": 30,
+    "filter_zero_phase": true,
+    "filter_on_already_epoched_data": true,
+    "n_csp_per_band": 4,
+    "csp_reg": null,
+    "csp_log": true,
+    "csp_norm_trace": false,
+    "csp_cov_est": "concat",
+    "csp_rank": 63,
+    "feature_selection": "MIBIF_select_k_best_mutual_info_classif",
+    "n_selected_features": 8,
+    "mutual_information_random_state": 42,
+    "tune_threshold": false,
+    "default_threshold": 0.5,
+    "min_validation_recall": 0.2,
+    "min_validation_positives": 3,
+    "refit_on_all_non_test": true,
+    "positive_label": 2,
+    "save_models": true,
+    "versions": {
+      "python": "3.12.12",
+      "mne": "1.13.2",
+      "sklearn": "1.9.1",
+      "numpy": "2.2.6",
+      "scipy": "1.18.0"
+    }
+  },
+  "n_folds_expected": 109,
+  "model_file_pattern": "modele/S{subject:03d}.joblib",
+  "results": {
+    "per_subject": "wyniki_per_subject.csv",
+    "predictions": "predykcje_epok.csv",
+    "assignments": "podzialy_uczestnikow.csv",
+    "selected_features": "wybrane_cechy_fbcsp.csv"
+  }
+}
