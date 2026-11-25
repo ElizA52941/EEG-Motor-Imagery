@@ -1,0 +1,36 @@
+{
+  "experiment_id": "35b8c0677f65",
+  "model": "CSP_LDA",
+  "dataset_id": "9e11e64597a2",
+  "data_manifest_relative_path": "../../../../dane_eegmmidb/zestawy/9e11e64597a2/manifest.json",
+  "config": {
+    "model": "CSP_LDA",
+    "dataset_id": "9e11e64597a2",
+    "n_csp": 4,
+    "csp_reg": null,
+    "csp_log": true,
+    "csp_norm_trace": false,
+    "csp_cov_est": "concat",
+    "csp_rank": 63,
+    "tune_threshold": false,
+    "default_threshold": 0.5,
+    "min_validation_recall": 0.2,
+    "min_validation_positives": 3,
+    "refit_on_all_non_test": true,
+    "positive_label": 2,
+    "save_models": true,
+    "versions": {
+      "python": "3.11.11",
+      "mne": "1.9.0",
+      "sklearn": "1.5.2",
+      "numpy": "1.26.4"
+    }
+  },
+  "n_folds_expected": 109,
+  "model_file_pattern": "modele/S{subject:03d}.joblib",
+  "results": {
+    "per_subject": "wyniki_per_subject.csv",
+    "predictions": "predykcje_epok.csv",
+    "assignments": "podzialy_uczestnikow.csv"
+  }
+}
